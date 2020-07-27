@@ -7,6 +7,7 @@ var VisitedLeaf = [];
 
 
 function getPaths(startNode, data) {
+  stack2 = [];
   let graphPaths = [];
   _.map(data, (value, key) => graph.set(key, value));
   nodesToVisit.push(startNode);
@@ -28,6 +29,7 @@ function getPaths(startNode, data) {
   }
   return graphPaths;
 }
+
 
 function allChildVisited(children) {
   for (let i in children) {

@@ -8,7 +8,7 @@ router.get('/getpaths', function (req, res, next) {
   if (req.query.startnode) {
     const graph = db.getGraph();
     if (graph) {
-      const paths = dag.getPaths(_.toNumber(req.query.startnode), graph);
+      let paths = dag.getPaths(_.toNumber(req.query.startnode), graph);
       res.status(200).send(paths);
     } else {
       res.status(404).send("Graph is empty, create a graph first");
@@ -19,13 +19,15 @@ router.get('/getpaths', function (req, res, next) {
 
 });
 
-router.get('/getgraph', function (req, res) {
+router.get('/getgraph', function (req, res, next) {
   const graph = db.getGraph();
   if (graph) {
+    res.setHeader('Content-Type', 'application/json');
     res.status(200).send(graph);
   } else {
     res.status(404).send("Graph empty");
   }
+  next();
 });
 
 router.post('/create', function (req, res, next) {
