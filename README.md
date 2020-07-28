@@ -4,7 +4,7 @@ A simple express server for generating paths for a given DAG(Directed Acyclic Gr
 
 ### Steps to run the server
 1. clone the repository
-2. cd dag-server
+2. Got to the repo directory in terminal `cd dag-server`
 3. run `npm install` to add dependencies
 4. run `node app.js` or `nodemon app.js`'
 
