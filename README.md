@@ -20,4 +20,6 @@ Sever by default runs on `port 5000` change the port in app.js file if port is n
 - *addnode*  :[POST] for adding nodes to existing graph
  
 
-
+### Details
+Graph data is stored in a database.json file, which can be updated/edited using the dag-ui or POSTMAN
+> a sample graph data is already added to database.json
